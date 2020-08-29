@@ -1,5 +1,6 @@
 public class Solution 
 {
+    // https://leetcode.com/problems/two-sum/
     public Tuple<int, int> TwoSum(int[] numbers, int target)
     {
         var dic = new Dictionary<int, int>();
