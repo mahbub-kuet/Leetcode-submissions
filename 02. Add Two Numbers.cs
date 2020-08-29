@@ -1,4 +1,7 @@
 public class Solution {
+    
+    // https://leetcode.com/problems/two-sum/
+    
     public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {
         
         ListNode head = new ListNode(0);
@@ -10,27 +13,31 @@ public class Solution {
                 int sum = 0;
 
                 if (l1 == null)
-                {       //If l1 is null, only proceed l2
+                {    
+                    //If l1 is null, only proceed l2
                     sum = l2.val;
                     l2 = l2.next;
                 }
                 else if (l2 == null)
-                {  //If l2 is null, only proceed l1
+                {  
+                    //If l2 is null, only proceed l1
                     sum = l1.val;
                     l1 = l1.next;
                 }
                 else
-                {               //If l1,l2 not null, proceed both
+                {               
+                    //If l1,l2 not null, proceed both
                     sum = l1.val + l2.val;
                     l1 = l1.next;
                     l2 = l2.next;
                 }
 
-                if (carry)           //check carry
+                if (carry)           
                     sum++;
 
                 if (sum >= 10)
-                {        //check overflow
+                {   
+                    //check overflow
                     sum = sum - 10;
                     carry = true;
                 }
@@ -41,7 +48,7 @@ public class Solution {
                 current = current.next;
             }
 
-            if (carry)               //check last carry
+            if (carry)               
                 current.next = new ListNode(1);
 
             return head.next;
